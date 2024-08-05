@@ -130,11 +130,11 @@ export default function Home() {
     });
   }, []);
 
-  // Update item in db using id
-  const updateItem = async () => {
+  // Update item in db
+  const updateItem = async (id: string) => {
     const name = document.getElementById("name") as HTMLInputElement;
     const amount = document.getElementById("amount") as HTMLInputElement;
-    await setDoc(doc(db, "items", "id"), {
+    await setDoc(doc(db, "items", id), {
       name: name.value,
       amount: parseInt(amount.value),
     });
@@ -264,7 +264,7 @@ export default function Home() {
                               <DialogClose>
                                 <Button
                                   type="submit"
-                                  onClick={() => updateItem()}
+                                  onClick={() => updateItem(item.id)}
                                 >
                                   Save changes
                                 </Button>
