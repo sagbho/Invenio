@@ -35,7 +35,6 @@ import {
   PlusIcon,
 } from "@radix-ui/react-icons";
 import { db } from "@/lib/firebase";
-import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   const [items, setItems] = useState<
@@ -308,7 +307,6 @@ export default function Home() {
           </small>
         </footer>
       </main>
-      <Analytics />
     </>
   );
 }
